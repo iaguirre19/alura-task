@@ -2,15 +2,13 @@
 
 // sintaxis :  (() => { codigo en esta parte}) () se manda a llamar inmediatamente.
 
+import checkComplete from "./components/checkComplete.js";
+import trashIconFunc from "./components/deleteicon.js";
 (() => {
+
 
 const btn = document.querySelector("[data-form-btn]");
 const input = document.querySelector("[data-form-input]");
-// const task = document.querySelector("[data-task]");
-// const cardsList = document.querySelector('.cardsList');
-
-
-let arregloConstructor = [];
 
 addEventListeners();
 function addEventListeners(){
@@ -61,48 +59,8 @@ function constructor(text){
     // este ingresa el icono de trash que es una funcion que cree por separado
     task.appendChild(trashIconFunc());
 }
-
-
-
-
-
-
 // Esta funcion limpia el imput
 const limpiar = ()=>{
     input.value = "";
 }
-
-// Esta funcion crea el checkbox
-const checkComplete = () => {
-    const i = document.createElement("i");
-    i.classList.add("far", "fa-check-square", "icon");
-    i.addEventListener("click", completeTask);
-    return i
-}
-
-// Esta funcion crea el carrito de basura
-const trashIconFunc = () => {
-    const trash = document.createElement("i");
-    trash.classList.add("fas", "fa-trash-alt", "trashIcon", "icon");
-    trash.addEventListener("click", removeTrash);
-    return trash    
-}
-
-// Elimina la card desde el elemento padre.
-const removeTrash = (e) => {
-    const parentTrash = e.target.parentElement;
-    parentTrash.remove()
-};
-
-
-
-// Esta funcion seleccion y des selecciona la palomita de check
-const completeTask = (e) => {
-    const element = e.target;
-    element.classList.toggle("fas");
-    element.classList.toggle('completeIcon');
-    element.classList.toggle("far");
-
-}
-
 })()
