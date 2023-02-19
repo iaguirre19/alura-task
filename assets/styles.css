@@ -27,7 +27,7 @@ form {
 }
 
 .mainCard {
-  width: 40vw;
+  width: 80vw;
   border-radius: 25px;
   background-color: #fff;
   padding: 25px;
@@ -124,4 +124,24 @@ form {
 
 .noTasks {
   font-size: 48px;
+}
+
+@media (max-width: 760px) {
+  .mainCard{
+    width: 80vw;
+  }
+  form{
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .inputForm{
+    margin-bottom: 10px;
+    width: 90%;
+    font-size: 22px;
+  }
+  .btnCreate{
+    padding: 15px 41%;
+    /* width: 91%; */
+  }
 }
